@@ -58,7 +58,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build Docker
+        run: docker compose build
+
+      - name: Push Docker
         run: docker compose push
 #        uses: docker/build-push-action@v5
 #        with:
