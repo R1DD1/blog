@@ -2,7 +2,7 @@ services:
   app:
     container_name: blog-app
     image: moteloff/blog:1.0.0
-    build: ./
+    build: .
     ports:
       - "8080:8080"
     depends_on:
