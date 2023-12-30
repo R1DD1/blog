@@ -1,7 +1,7 @@
 start=$(date +"%s")
 
 ssh -p ${SERVER_PORT} ${SERVER_USER}@${SERVER_HOST} -i key.txt -t -t -o StrictHostKeyChecking=no << 'ENDSSH'
-docker pull moteloff/blog:latest
+docker pull -a moteloff/blog:latest
 docker pull postgres:latest
 
 APP_CONTAINER_NAME=moteloff/blogapp
