@@ -4,7 +4,7 @@ ssh -p ${SERVER_PORT} ${SERVER_USER}@${SERVER_HOST} -i key.txt -t -t -o StrictHo
 docker pull -a moteloff/blog:latest
 docker pull postgres:latest
 
-APP_CONTAINER_NAME=moteloff/blogapp
+APP_CONTAINER_NAME=blogapp
 if [ "$(docker ps -qa -f name=$APP_CONTAINER_NAME)" ]; then
     if [ "$(docker ps -q -f name=$APP_CONTAINER_NAME)" ]; then
         echo "Container is running -> stopping it..."
@@ -12,7 +12,7 @@ if [ "$(docker ps -qa -f name=$APP_CONTAINER_NAME)" ]; then
     fi
 fi
 
-DB_CONTAINER_NAME=moteloff/postgresdb
+DB_CONTAINER_NAME=postgresdb
 if [ "$(docker ps -qa -f name=$DB_CONTAINER_NAME)" ]; then
     if [ "$(docker ps -q -f name=$DB_CONTAINER_NAME)" ]; then
         echo "Container is running -> stopping it..."
