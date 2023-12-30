@@ -21,7 +21,7 @@ if [ "$(docker ps -qa -f name=$DB_CONTAINER_NAME)" ]; then
 fi
 
 docker run -d --rm -p 5432:5432 --name $DB_CONTAINER_NAME postgres:latest
-docker run -d --rm -p 8080:8080 --name $APP_CONTAINER_NAME moteloff/blog:latest
+docker run -d --rm -p 8080:8080 --name $APP_CONTAINER_NAME moteloff/blog:1.0.0
 
 exit
 ENDSSH
